@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function fetchStories() {
         try {
-            const response = await fetch('http://127.0.0.1:8000/success-stories/');
+            const response = await fetch('https://life-givers-backend.vercel.app/success-stories/');
             if (!response.ok) throw new Error('Failed to fetch stories');
 
             const stories = await response.json();

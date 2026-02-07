@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Call Register API (Method: POST)
-            const response = await fetch('http://127.0.0.1:8000/users', {
+            const response = await fetch('https://life-givers-backend.vercel.app/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function fetchFundraiser(fid) {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/fundraiser/${fid}`);
+            const response = await fetch(`https://life-givers-backend.vercel.app/fundraiser/${fid}`);
             if (response.ok) {
                 const data = await response.json();
                 fundraiserName = data.campaign_title || "Medical Campaign";
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!found) {
         console.log("Specified fundraiser not found, fetching any approved fundraiser...");
         try {
-            const listResp = await fetch('http://127.0.0.1:8000/fundraiser/status/approved');
+            const listResp = await fetch('https://life-givers-backend.vercel.app/fundraiser/status/approved');
             if (listResp.ok) {
                 const fundraisers = await listResp.json();
                 if (fundraisers && fundraisers.length > 0) {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         try {
             // Using TRAILING SLASH to match standard API patterns
-            const response = await fetch('http://127.0.0.1:8000/donations/', {
+            const response = await fetch('https://life-givers-backend.vercel.app/donations/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

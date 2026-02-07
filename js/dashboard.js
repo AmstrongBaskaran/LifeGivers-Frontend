@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // -- Existing Dynamic Stats --
     async function fetchStats() {
         try {
-            const response = await fetch('http://127.0.0.1:8000/stats/');
+            const response = await fetch('https://life-givers-backend.vercel.app/stats/');
             const data = await response.json();
 
             totalFundraisersEl.textContent = data.total_fundraisers.toLocaleString();
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function fetchPlatformStats() {
         try {
-            const response = await fetch('http://127.0.0.1:8000/platform-stats/');
+            const response = await fetch('https://life-givers-backend.vercel.app/platform-stats/');
             const stats = await response.json();
 
             editLives.value = stats.lives_impacted;
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/platform-stats/', {
+            const response = await fetch('https://life-givers-backend.vercel.app/platform-stats/', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedStats)

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function loadCampaign(id) {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/fundraiser/${id}`);
+            const response = await fetch(`https://life-givers-backend.vercel.app/fundraiser/${id}`);
             if (response.ok) {
                 const data = await response.json();
                 fillCampaignDetails(data);
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // --- AUTO-PICK MODE ---
         // If no ID is in URL (e.g. from Index header "Donate"), pick the first approved one
         try {
-            const response = await fetch('http://127.0.0.1:8000/fundraiser/status/approved');
+            const response = await fetch('https://life-givers-backend.vercel.app/fundraiser/status/approved');
             if (response.ok) {
                 const approvedList = await response.json();
                 if (approvedList.length > 0) {
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // Save to database
             // Save Donation record to Backend Database
-            const response = await fetch('http://127.0.0.1:8000/donations/', {
+            const response = await fetch('https://life-givers-backend.vercel.app/donations/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

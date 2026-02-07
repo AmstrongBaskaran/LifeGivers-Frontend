@@ -3,10 +3,10 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         // 1. Fetch Manual Stats (Impacted lives, Success rate, etc)
-        const platformResp = await fetch('http://127.0.0.1:8000/platform-stats/');
+        const platformResp = await fetch('https://life-givers-backend.vercel.app/platform-stats/');
 
         // 2. Fetch Real Donation Stats (Dynamic Total)
-        const dynamicStatsResp = await fetch('http://127.0.0.1:8000/stats/');
+        const dynamicStatsResp = await fetch('https://life-givers-backend.vercel.app/stats/');
 
         const safeSetText = (id, text) => {
             const el = document.getElementById(id);
