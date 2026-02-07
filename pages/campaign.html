@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Campaign - Life Givers</title>
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/campaign_all.css" />
+</head>
+
+<body>
+  <header>
+    <img id="logo" src="../assets/logo_2.png" alt="Life Givers Logo" />
+    <h1 id="name"><a href="../index.html">Life Givers</a></h1>
+    <div id="navmenu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./campaign.html" class="active">Start Campaign</a></li>
+        <li><a href="./donate.html">Donate</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </div>
+    <div id="headerbtn">
+      <!-- Logic handled by header_auth.js -->
+      <a href="./login.html" class="nav-btn">Login</a>
+      <a href="./signin.html" class="nav-btn signup">Sign Up</a>
+    </div>
+  </header>
+
+  <main class="strt_campaign1">
+    <div class="progres_title">
+      <h2>Start Your Campaign</h2>
+      <p id="step-count">Step 1 to 6</p>
+    </div>
+    <div class="progress_bar">
+      <div class="progress" id="progress-bar-fill" style="width: 16.6%"></div>
+    </div>
+    <div class="progress_name">
+      <p id="pname-1" class="active">Basic Info</p>
+      <p id="pname-2">Patient Details</p>
+      <p id="pname-3">Story</p>
+      <p id="pname-4">Upload Proofs</p>
+      <p id="pname-5">Payment Setup</p>
+      <p id="pname-6">Agree & Submit</p>
+    </div>
+
+    <form id="campaignForm">
+      <!-- Step 1: Basic Info -->
+      <div class="campaign_div active" id="step-1">
+        <div class="campaign_title">
+          <label for="campaign_content1">Campaign Title :</label>
+          <input type="text" id="campaign_content1" placeholder="EX. Help John fight cancer" />
+          <span id="campaign_content1-error" class="error-message"></span>
+        </div>
+        <div class="campaign_content2">
+          <div class="campaign1">
+            <label for="category">Category :</label>
+            <select id="category">
+              <option value="" selected disabled>Select Category</option>
+              <option value="Emergency Care">Emergency Care</option>
+              <option value="Serious Illness Treatment">Serious Illness Treatment</option>
+              <option value="Operation / Surgery">Operation / Surgery</option>
+              <option value="Child Medical Treatment">Child Medical Treatment</option>
+              <option value="Long-term Treatment">Long-term Treatment</option>
+              <option value="Medicines & Tests">Medicines & Tests</option>
+              <option value="Recovery Care">Recovery Care</option>
+            </select>
+            <span id="category-error" class="error-message"></span>
+          </div>
+          <div class="campaign2">
+            <label for="target_amount">Target Amount :</label>
+            <input type="number" id="target_amount" placeholder="Ex. 15000" />
+            <span id="target_amount-error" class="error-message"></span>
+          </div>
+        </div>
+        <div class="campaign_content3">
+          <label for="location">Location :</label>
+          <input type="text" id="location" placeholder="City, State" />
+          <span id="location-error" class="error-message"></span>
+        </div>
+      </div>
+
+      <!-- Step 2: Patient Details -->
+      <div class="campaign_div" id="step-2">
+        <div class="campaign_content2">
+          <div class="patient_name">
+            <label for="patient_name">Patient Name:</label>
+            <input type="text" id="patient_name" placeholder="Ex. John Doe">
+            <span id="patient_name-error" class="error-message"></span>
+          </div>
+          <div class="age">
+            <label for="patient_age">Age:</label>
+            <input type="number" id="patient_age" placeholder="Ex. 25">
+            <span id="patient_age-error" class="error-message"></span>
+          </div>
+        </div>
+        <div class="campaign_content2">
+          <div class="Patient_rel">
+            <label for="relation">Your Relation To Patient:</label>
+            <select id="relation">
+              <option value="" selected disabled hidden>Select Relation</option>
+              <option value="Self">Self</option>
+              <option value="Father">Father</option>
+              <option value="Mother">Mother</option>
+              <option value="Friend">Friend</option>
+              <option value="Daughter">Daughter</option>
+              <option value="Other">Other</option>
+            </select>
+            <span id="relation-error" class="error-message"></span>
+          </div>
+          <div class="patient_hosp">
+            <label for="hospital_name">Hospital/Clinic Name:</label>
+            <input type="text" id="hospital_name" placeholder="Ex. Apollo Hospital">
+            <span id="hospital_name-error" class="error-message"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Story -->
+      <div class="campaign_div" id="step-3">
+        <div class="campaign_title">
+          <label for="fundraiser_story">Tell Your Story:</label>
+          <textarea id="fundraiser_story" placeholder="Describe the situation in detail..."></textarea>
+          <span id="fundraiser_story-error" class="error-message"></span>
+        </div>
+      </div>
+
+      <!-- Step 4: Upload Proofs -->
+      <div class="campaign_div" id="step-4">
+        <div class="upload_files">
+          <div class="upload" onclick="document.getElementById('medical_report_url').click()">
+            <h5>Medical Reports</h5>
+            <p class="upload-hint">Upload all medical reports as one document</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5z" />
+            </svg>
+            <input type="file" id="medical_report_url" hidden accept="image/*,.pdf">
+            <p id="name-medical_report_url" class="file-name-display"></p>
+          </div>
+          <div class="upload" onclick="document.getElementById('hospital_report_url').click()">
+            <h5>Hospital Bills</h5>
+            <p class="upload-hint">Upload all hospital bills as one document</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5z" />
+            </svg>
+            <input type="file" id="hospital_report_url" hidden accept="image/*,.pdf">
+            <p id="name-hospital_report_url" class="file-name-display"></p>
+          </div>
+          <div class="upload" onclick="document.getElementById('id_proof_url').click()">
+            <h5>ID Proofs</h5>
+            <p class="upload-hint">Upload all ID proofs as one document</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5z" />
+            </svg>
+            <input type="file" id="id_proof_url" hidden accept="image/*,.pdf">
+            <p id="name-id_proof_url" class="file-name-display"></p>
+          </div>
+          <div class="upload" onclick="document.getElementById('campaign_image_url').click()">
+            <h5>Campaign Image</h5>
+            <p class="upload-hint">Upload campaign image</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5z" />
+            </svg>
+            <input type="file" id="campaign_image_url" hidden accept="image/*,.pdf">
+            <p id="name-campaign_image_url" class="file-name-display"></p>
+          </div>
+        </div>
+        <div id="uploads-error" class="error-message" style="text-align: center; margin-top: 20px;"></div>
+      </div>
+
+      <!-- Step 5: Payment Setup -->
+      <div class="campaign_div" id="step-5">
+        <div class="campaign_content2">
+          <div class="bankaccount">
+            <label for="bank_account">Bank Account Number:</label>
+            <input type="text" id="bank_account" placeholder="Ex. 1234567890">
+            <span id="bank_account-error" class="error-message"></span>
+          </div>
+          <div class="ifsc">
+            <label for="ifsc">IFSC code:</label>
+            <input type="text" id="ifsc" placeholder="Ex. SBIN0001234">
+            <span id="ifsc-error" class="error-message"></span>
+          </div>
+        </div>
+        <div class="campaign_content2">
+          <div class="upi">
+            <label for="phone_number">Phone Number :</label>
+            <input type="text" id="phone_number" placeholder="Enter Phone Number" pattern="[0-9]{10}"
+              title="Enter a valid 10-digit phone number">
+            <span id="phone_number-error" class="error-message"></span>
+          </div>
+          <div class="pan_num">
+            <label for="pan_num">Pan Number:</label>
+            <input type="text" id="pan_num" placeholder="Ex. ABCDE1234F">
+            <span id="pan_num-error" class="error-message"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6: Review & Submit -->
+      <div class="campaign_div" id="step-6">
+        <div class="cbox">
+          <input type="checkbox" id="terms" />
+          <label for="terms">I agree to the Terms & Conditions and Privacy Policy</label>
+        </div>
+        <span id="terms-error" class="error-message"></span>
+
+        <div class="cbox">
+          <input type="checkbox" id="verify_chk" />
+          <label for="verify_chk">I understand that my campaign will be reviewed and verified before going live.</label>
+        </div>
+        <span id="verify_chk-error" class="error-message"></span>
+
+        <div class="list">
+          <h3>What happens next?</h3>
+          <ul>
+            <li>Your campaign will be submitted for verification</li>
+            <li>Our team will review all documents within 1-3 business days</li>
+            <li>Once approved, your campaign will go live</li>
+            <li>You'll receive notifications about the status</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="btn-prev" id="prevBtn">Previous</button>
+        <button type="button" class="btn-next" id="nextBtn">Next</button>
+      </div>
+    </form>
+  </main>
+
+  <footer id="footer">
+    <div class="footer_containerdiv">
+      <h3><a href="../index.html">LifeGivers</a></h3>
+      <p>Connecting hearts to fund medical treatments and educational dreams</p>
+    </div>
+    <div class="footer_containerdiv">
+      <h3>Quick Links</h3>
+      <p><a href="../index.html">Browse Campaigns</a></p>
+      <p><a href="./campaign.html">Start Fundraising</a></p>
+      <p><a href="">How It Works</a></p>
+      <p><a href="">Success Stories</a></p>
+    </div>
+    <div class="footer_containerdiv">
+      <h3>Support</h3>
+      <p><a href="">Help Center</a></p>
+      <p><a href="">Contact Us</a></p>
+      <p><a href="">Privacy Policy</a></p>
+      <p><a href="">Terms of Service</a></p>
+    </div>
+    <div class="footer_containerdiv">
+      <h3>Contact</h3>
+      <p><a href="mailto:support@lifegivers.com">support@lifegivers.com</a></p>
+      <p><a href="tel:+91876543210">+91 876543210</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/header_auth.js"></script>
+  <script src="../js/form_validation_utils.js"></script>
+  <script src="../js/campaign.js"></script>
+</body>
+
+</html>

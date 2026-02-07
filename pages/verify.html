@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaign Verification</title>
+  <link rel="stylesheet" href="../css/verify.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="title">
+      <h2>LifeGivers</h2>
+      <p>Admin Control</p>
+    </div>
+    <div class="list">
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./profile_verify.html">Profile Verification</a>
+      <a href="../index.html"
+        style="margin-top: 20px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px; color: #00b386;">↩ Back to
+        Home</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="header">
+      <h1>Campaign Verification</h1>
+    </div>
+
+    <div id="loading" style="text-align: center; padding: 50px;">
+      <p>Loading fundraiser details...</p>
+    </div>
+
+    <div id="fundraiser-details" style="display: none;">
+      <!-- Step 1: Basic Info -->
+      <div class="section">
+        <h3 class="section-title">Basic Info</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">Campaign Title</div>
+            <div class="info-value" id="campaign-title"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Category</div>
+            <div class="info-value" id="category"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Target Amount</div>
+            <div class="info-value" id="target-amount"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Location</div>
+            <div class="info-value" id="location"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Patient Details -->
+      <div class="section">
+        <h3 class="section-title">Patient Details</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">Patient Name</div>
+            <div class="info-value" id="patient-name"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Age</div>
+            <div class="info-value" id="patient-age"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Relation To Patient</div>
+            <div class="info-value" id="relation"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Hospital/Clinic Name</div>
+            <div class="info-value" id="hospital-name"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Story (Editable for Admin) -->
+      <div class="section">
+        <h3 class="section-title">Story (You can edit before approving)</h3>
+        <textarea id="story-editor" placeholder="Edit the fundraiser story here..."
+          style="width: 100%; min-height: 200px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem; line-height: 1.6; resize: vertical;"></textarea>
+      </div>
+
+      <!-- Step 4: Upload Proofs -->
+      <div class="section">
+        <h3 class="section-title">Upload Proofs</h3>
+        <div class="proofs-grid">
+          <div class="proof-card" id="medical-proof">
+            <div class="proof-title">Medical Reports</div>
+            <div class="proof-preview">Not uploaded</div>
+          </div>
+          <div class="proof-card" id="hospital-proof">
+            <div class="proof-title">Hospital Bills</div>
+            <div class="proof-preview">Not uploaded</div>
+          </div>
+          <div class="proof-card" id="id-proof">
+            <div class="proof-title">ID Proofs</div>
+            <div class="proof-preview">Not uploaded</div>
+          </div>
+          <div class="proof-card" id="campaign-image">
+            <div class="proof-title">Campaign Image</div>
+            <div class="proof-preview">Not uploaded</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Payment Setup -->
+      <div class="section">
+        <h3 class="section-title">Payment Setup</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">Bank Account</div>
+            <div class="info-value" id="bank-account"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">IFSC Code</div>
+            <div class="info-value" id="ifsc"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Phone Number</div>
+            <div class="info-value" id="phone_number"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">PAN Number</div>
+            <div class="info-value" id="pan"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6: Actions -->
+      <div class="action-buttons">
+        <button class="btn btn-reject" id="reject-btn">Reject</button>
+        <button class="btn btn-approve" id="approve-btn">Approve</button>
+      </div>
+    </div>
+
+    <div id="error-message" style="display: none; text-align: center; padding: 50px; color: red;">
+      <h3>Error loading fundraiser</h3>
+      <p id="error-text"></p>
+      <a href="./profile_verify.html" style="color: #00b386;">Back to verification page</a>
+    </div>
+  </div>
+
+  <script src="../js/verify.js"></script>
+</body>
+
+</html>

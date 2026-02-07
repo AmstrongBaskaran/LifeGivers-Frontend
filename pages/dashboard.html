@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeGivers Admin | Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="title">
+      <h2>LifeGivers</h2>
+      <p>Admin Control</p>
+    </div>
+    <div class="list">
+      <a href="./dashboard.html" class="active">Dashboard</a>
+      <a href="./profile_verify.html">Profile Verification</a>
+      <a href="../index.html"
+        style="margin-top: 20px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px; color: #00b386;">↩ Back to
+        Home</a>
+    </div>
+  </div>
+
+  <div class="dashboard">
+    <div class="stats-grid">
+      <div class="box">
+        <h4>Total medical Fundraiser</h4>
+        <h2 id="total-fundraisers">0</h2>
+      </div>
+      <div class="box">
+        <h4>Verified Fundraiser</h4>
+        <h2 id="verified-fundraisers">0</h2>
+      </div>
+      <div class="box">
+        <h4>Total Donation Collected</h4>
+        <h2 id="total-donations">0</h2>
+      </div>
+      <div class="box">
+        <h4>Pending Verfication</h4>
+        <h2 id="pending-fundraisers">0</h2>
+      </div>
+    </div>
+    <!-- Platform Stats Management -->
+    <div class="stats-management">
+      <h3>Manage Platform Statistics (Index Page)</h3>
+      <form id="stats-form">
+        <div class="form-group">
+          <label for="edit-lives-impacted">Lives Impacted</label>
+          <input type="text" id="edit-lives-impacted" placeholder="e.g. 15,240">
+        </div>
+        <div class="form-group">
+          <label for="edit-successful-campaigns">Successful Campaigns</label>
+          <input type="text" id="edit-successful-campaigns" placeholder="e.g. 2,847">
+        </div>
+        <div class="form-group">
+          <label for="edit-success-rate">Success Rate</label>
+          <input type="text" id="edit-success-rate" placeholder="e.g. 98.5%">
+        </div>
+        <button type="submit" class="btn-save">Update Stats</button>
+      </form>
+      <!-- Success Stories Management -->
+      <div class="stats-management" style="margin-top: 25px;">
+        <h3>Manage Success Stories</h3>
+        <form id="story-form">
+          <div class="form-group">
+            <label for="story-title">Story Title</label>
+            <input type="text" id="story-title" placeholder="e.g. A Miracle for Ravi" required>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="story-content">Story Content</label>
+            <textarea id="story-content" placeholder="Write the success story here..." rows="4" style="
+              padding: 14px 16px;
+              border: 2px solid #f1f5f9;
+              border-radius: 12px;
+              font-size: 1rem;
+              color: #334155;
+              font-family: inherit;
+              width: 100%;
+              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+              background-color: #f8fafc;
+          " required></textarea>
+          </div>
+          <button type="submit" class="btn-save">Add Story</button>
+        </form>
+
+        <div id="stories-list-container" style="margin-top: 30px; border-top: 2px solid #f1f5f9; padding-top: 20px;">
+          <h4 style="color: #64748b; margin-bottom: 15px; font-size: 14px; text-transform: uppercase;">Existing Stories
+          </h4>
+          <div id="stories-list" style="display: flex; flex-direction: column; gap: 15px;">
+            <!-- Stories will appear here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>
