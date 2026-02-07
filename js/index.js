@@ -59,8 +59,19 @@ document.addEventListener('DOMContentLoaded', async () => {
             card.style.cursor = 'pointer';
             card.addEventListener('click', (e) => {
                 // Don't trigger if the actual donate button was clicked (it has its own link)
-                if (!e.target.classList.contains('card-donate-btn')) {
-                    window.location.href = `./pages/donate.html?id=${fundraiser.fundraiser_id}`;
+                // The .check-login delegation in header_auth.js will handle the button.
+                if (!e.target.closest('.card-donate-btn')) {
+                    const userId = localStorage.getItem('user_id');
+                    const role = localStorage.getItem('role');
+
+                    if (!userId) {
+                        alert('Please Login first to access this feature!');
+                        window.location.href = './pages/login.html';
+                    } else if (role === 'admin') {
+                        alert('Admins cannot Start Campaigns or Donate. Please login as a User.');
+                    } else {
+                        window.location.href = `./pages/donate.html?id=${fundraiser.fundraiser_id}`;
+                    }
                 }
             });
 

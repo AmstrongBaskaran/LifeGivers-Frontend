@@ -20,13 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Global Check-Login Handler
+    // 2. Global Check-Login Handler (Using Event Delegation for static & dynamic elements)
     // Restricts access to "Start Campaign" and "Donate" links
-    // - If not logged in -> Alert & Redirect to Login
-    // - If Admin -> Alert (Admins cannot donate/start campaign)
-    document.querySelectorAll('.check-login').forEach(link => {
-        link.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
+        // Find if the clicked element or any of its parents has 'check-login' class
+        const targetLink = e.target.closest('.check-login');
+
+        if (targetLink) {
             const role = localStorage.getItem('role'); // Get user role
+            const userId = localStorage.getItem('user_id');
 
             if (!userId) {
                 e.preventDefault();
@@ -37,6 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 alert('Admins cannot Start Campaigns or Donate. Please login as a User.');
             }
-        });
+        }
     });
 });
