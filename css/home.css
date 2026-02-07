@@ -126,27 +126,33 @@ header {
 #heroimg {
   height: 500px;
   width: 100%;
-  /* Softer border in Theme color instead of black */
   border: 2px solid #00b386;
   border-radius: 20px;
   background-image: url(../assets/herosec_img.webp);
   background-size: cover;
   background-position: center;
   display: flex;
+  justify-content: flex-end;
+  /* Align quote to the right */
+  align-items: center;
   box-shadow: 0 10px 30px rgba(0, 179, 134, 0.15);
+  position: relative;
+  overflow: hidden;
 }
 
 .herosec_quotes {
-  height: 300px;
-  width: 400px;
+  padding: 30px;
+  width: 40%;
+  max-width: 400px;
   text-align: center;
-  margin-left: 1000px;
-  margin-top: 180px;
+  margin-right: 5%;
+  /* Use percentage instead of 1000px */
   color: #007b8f;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
 }
-
-
 
 #herocontent {
   margin-top: 40px;
@@ -154,32 +160,37 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 0 20px;
 }
 
 #herocontent h2 {
-  font-size: xx-large;
+  font-size: 32px;
   font-family: Arial, Helvetica, sans-serif;
   color: #007b8f;
 }
 
 #herocontent p {
-  font-size: 20px;
+  font-size: 18px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #333333;
+  max-width: 800px;
 }
 
 #herobutton {
   display: flex;
-  gap: 40px;
-  margin-top: 10px;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-btn {
   border-radius: 15px;
-  width: 200px;
-  padding: 15px;
+  width: 180px;
+  padding: 12px;
   font-weight: 800;
-  font-size: 17px;
+  font-size: 16px;
   background-color: #00b386;
   color: white;
   text-decoration: none;
@@ -204,6 +215,129 @@ header {
 .hero-btn.secondary:hover {
   background-color: #007b8f;
   color: white;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1100px) {
+  .herosec_quotes {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 15px 20px;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #navmenu {
+    margin: 0;
+    width: 100%;
+    order: 3;
+  }
+
+  #navmenu ul {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  #headerbtn {
+    margin: 0;
+  }
+
+  #heroimg {
+    height: 400px;
+    justify-content: center;
+  }
+
+  .herosec_quotes {
+    width: 80%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .herosec_quotes h1 {
+    font-size: 20px;
+  }
+
+  .homecontainer {
+    margin-top: 50px;
+  }
+
+  #circlecontainer {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .herosec3_div {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .s_story {
+    width: 90%;
+  }
+
+  #impact_statics {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .statics_container {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  #footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer_containerdiv {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    gap: 10px;
+  }
+
+  #navmenu ul {
+    gap: 15px;
+  }
+
+  #navmenu ul li {
+    font-size: 13px;
+  }
+
+  #heroimg {
+    height: 300px;
+  }
+
+  #herocontent h2 {
+    font-size: 24px;
+  }
+
+  #herocontent p {
+    font-size: 15px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .statics_container {
+    width: 100%;
+  }
 }
 
 .homecontainer {

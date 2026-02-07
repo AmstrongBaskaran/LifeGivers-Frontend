@@ -149,3 +149,34 @@ body {
 .btn-save:active {
     transform: translateY(0);
 }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .dashboard {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .box h2 {
+        font-size: 26px;
+    }
+
+    .stats-management {
+        padding: 20px;
+    }
+
+    #stats-form {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-save {
+        width: 100%;
+    }
+}

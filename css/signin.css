@@ -125,3 +125,10 @@ body {
   align-items: center;
 }
 
+/* RESPONSIVE DESIGN */
+@media (max-width: 550px) {
+  .signin_container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}

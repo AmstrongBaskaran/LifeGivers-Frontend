@@ -232,26 +232,49 @@ a {
   font-weight: bold;
 }
 
-/* Responsive media query*/
+/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .main-container {
     grid-template-columns: 1fr;
+    width: 90%;
   }
 
   .support-section {
     position: static;
-    width: 100%;
-    box-sizing: border-box;
+    margin-top: 30px;
   }
 }
 
 @media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 15px 20px;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #logo {
+    margin-left: 0;
+  }
+
   #navmenu {
     display: none;
+    /* Desktop menu usually hidden on small screens */
   }
 
   .campaign-img {
     height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .amount-buttons button {
+    width: 100%;
+  }
+
+  .campaign-img {
+    height: 200px;
   }
 }
 

@@ -132,3 +132,15 @@ body {
   color: #ff7043;
   text-decoration: none;
 }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+  #login_container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .l_container2 {
+    width: 100%;
+  }
+}

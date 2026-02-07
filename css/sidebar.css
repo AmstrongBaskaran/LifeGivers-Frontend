@@ -77,3 +77,33 @@
   letter-spacing: 1px;
   margin-top: 4px;
 }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .title {
+    display: none;
+    /* Hide large title on mobile nav */
+  }
+
+  .list {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .list a {
+    padding: 10px 15px;
+    margin: 0 5px;
+    white-space: nowrap;
+  }
+}
