@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function fetchFundraiser(fid) {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/fundraiser/${fid}`);
+            const response = await fetch(`https://life-givers-backend.vercel.app/fundraiser/${fid}`);
             if (response.ok) {
                 const data = await response.json();
                 fundraiserName = data.campaign_title || "Medical Campaign";

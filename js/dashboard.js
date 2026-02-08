@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalDonationsEl = document.getElementById('total-donations');
     const pendingFundraisersEl = document.getElementById('pending-fundraisers');
 
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    const API_BASE_URL = 'https://life-givers-backend.vercel.app';
 
     // -- Existing Dynamic Stats --
     async function fetchStats() {
