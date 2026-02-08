@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // Fetch list of APPROVED fundraisers from the Backend
-        const response = await fetch('https://life-givers-backend.vercel.app/fundraiser/status/approved');
+        const response = await fetch('http://127.0.0.1:8000/fundraiser/status/approved');
         const fundraisers = await response.json();
 
         if (fundraisers.length === 0) {

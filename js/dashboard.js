@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalDonationsEl = document.getElementById('total-donations');
     const pendingFundraisersEl = document.getElementById('pending-fundraisers');
 
+    const API_BASE_URL = 'http://127.0.0.1:8000';
+
     // -- Existing Dynamic Stats --
     async function fetchStats() {
         try {
-            const response = await fetch('https://life-givers-backend.vercel.app/stats/');
+            const response = await fetch(`${API_BASE_URL}/stats/`);
             const data = await response.json();
 
             totalFundraisersEl.textContent = data.total_fundraisers.toLocaleString();
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function fetchPlatformStats() {
         try {
-            const response = await fetch('https://life-givers-backend.vercel.app/platform-stats/');
+            const response = await fetch(`${API_BASE_URL}/platform-stats/`);
             const stats = await response.json();
 
             editLives.value = stats.lives_impacted;
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
 
         try {
-            const response = await fetch('https://life-givers-backend.vercel.app/platform-stats/', {
+            const response = await fetch(`${API_BASE_URL}/platform-stats/`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedStats)
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function fetchStories() {
         try {
-            const response = await fetch('http://127.0.0.1:8000/success-stories/');
+            const response = await fetch(`${API_BASE_URL}/success-stories/`);
             const stories = await response.json();
 
             storiesList.innerHTML = '';
@@ -110,7 +112,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!confirm('Are you sure you want to delete this story?')) return;
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/success-stories/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/success-stories/${id}`, {
                 method: 'DELETE'
             });
             if (response.ok) {
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/success-stories/', {
+            const response = await fetch(`${API_BASE_URL}/success-stories/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(storyData)
