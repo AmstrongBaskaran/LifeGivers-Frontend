@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Verification - LifeGivers</title>
+  <link rel="stylesheet" href="../css/profile_verify.css" />
+  <link rel="stylesheet" href="../css/sidebar.css" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="title">
+      <h2>LifeGivers</h2>
+      <p>Admin Control</p>
+    </div>
+    <div class="list">
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./profile_verify.html" class="active">Profile Verification</a>
+      <a href="../index.html"
+        style="margin-top: 20px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px; color: #00b386;">↩ Back to
+        Home</a>
+    </div>
+  </div>
+  <div class="container">
+    <h1>Pending Fundraiser Verification</h1>
+    <div id="fundraisers-container">
+      <!-- Fundraisers will be loaded here -->
+    </div>
+    <div id="no-fundraisers" style="display: none; text-align: center; padding: 50px; color: #666;">
+      <h3>No pending fundraisers</h3>
+      <p>All fundraisers have been verified!</p>
+    </div>
+  </div>
+
+  <script src="../js/profile_verify.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <script src="../js/header_auth.js"></script>
+</head>
+
+<body>
+  <header style="width: 100%; box-sizing: border-box;">
+    <img id="logo" src="../assets/logo_2.png" alt="" />
+    <h1 id="name"><a href="../index.html">Life Givers</a></h1>
+    <div id="navmenu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./campaign.html" class="check-login">Start Campaign</a></li>
+        <li><a href="./donate.html" class="check-login">Donate</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </div>
+    <div id="headerbtn">
+      <a href="./login.html" class="nav-btn">Login</a>
+      <a href="./signin.html" class="nav-btn signup">Sign Up</a>
+    </div>
+  </header>
+
+  <div style="flex: 1; display: flex; align-items: center; justify-content: center; width: 100%; padding: 40px 0;">
+    <form id="login_container" action="">
+      <h3>Welcome To Life Givers</h3>
+      <h6>Login To Your Account</h6>
+
+      <div class="l_container2">
+        <div class="form-group">
+          <label for="phonenumber">Phone Number:</label>
+          <input type="tel" id="phonenumber" name="phonenumber" placeholder="Enter your phone number" required />
+          <span id="phonenumber-error" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+          <span id="password-error" class="error-message"></span>
+        </div>
+
+        <button type="submit" class="login_btn">Login</button>
+        <p>You Don't Have a Account <sup>*</sup><a href="./signin.html">Sign Up</a></p>
+      </div>
+    </form>
+  </div>
+
+  <div id="footer">
+    <div class="footer_containerdiv">
+      <h3><a href="../index.html">LifeGivers</a></h3>
+      <p>Connecting hearts to fund medical treatments and educational dreams</p>
+    </div>
+
+    <div class="footer_containerdiv">
+      <h3>Quick Links</h3>
+      <p><a href="">Browse Campaigns</a></p>
+      <p><a href="./campaign.html" class="check-login">Start Fundraising</a></p>
+      <p><a href="">How It Works</a></p>
+      <p><a href="">Success Stories</a></p>
+    </div>
+    <div class="footer_containerdiv">
+      <h3>Support</h3>
+      <p><a href="">Help Center</a></p>
+      <p><a href="">Contact Us</a></p>
+      <p><a href="">Privacy Policy</a></p>
+      <p><a href="">Terms of Service</a></p>
+    </div>
+    <div class="footer_containerdiv">
+      <h3>Contact</h3>
+      <p><a href="">support@lifegivers.com</a></p>
+      <p><a href="">+91 876543210</a></p>
+    </div>
+  </div>
+
+  <script src="../js/login.js"></script>
+</body>
+
+</html>

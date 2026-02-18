@@ -1,0 +1,142 @@
+body {
+    background-color: #f7f9fc;
+    font-family: 'Inter', -apple-system, sans-serif;
+    display: flex;
+}
+
+.container {
+    flex: 1;
+    margin-left: 260px;
+    padding: 40px;
+    max-width: 1200px;
+}
+
+.container h1 {
+    font-size: 28px;
+    color: #007b8f;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.box {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    position: relative;
+}
+
+.box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.images {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f0fdfc;
+    flex-shrink: 0;
+}
+
+.images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cont {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cont1 h4 {
+    font-size: 18px;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.cont1 p {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.cont2 {
+    display: flex;
+    gap: 40px;
+    margin-top: 5px;
+}
+
+.cls h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+    margin-bottom: 2px;
+}
+
+.cls p {
+    font-size: 15px;
+    color: #475569;
+    font-weight: 600;
+}
+
+.verify-btn {
+    background-color: #00b386;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 179, 134, 0.2);
+}
+
+.verify-btn:hover {
+    background-color: #007b8f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 123, 143, 0.25);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    body {
+        flex-direction: column;
+    }
+
+    .container {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .box {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .cont2 {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .verify-btn {
+        width: 100%;
+    }
+}
