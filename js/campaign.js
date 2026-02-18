@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentStep = 1;
     const totalSteps = 6;
     const imgData = {}; // Stores Base64 strings of uploaded images
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    const API_BASE_URL = 'https://life-givers-backend.vercel.app';
 
     // UI Elements
     const nextBtn = document.getElementById('nextBtn');

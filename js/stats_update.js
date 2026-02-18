@@ -1,6 +1,6 @@
 // Fetch and display Platform Stats (Manual + Dynamic)
 document.addEventListener('DOMContentLoaded', async () => {
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    const API_BASE_URL = 'https://life-givers-backend.vercel.app';
     try {
         // 1. Fetch Manual Stats (Impacted lives, Success rate, etc)
         const platformResp = await fetch(`${API_BASE_URL}/platform-stats/`);

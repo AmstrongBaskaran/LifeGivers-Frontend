@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const campaignData = JSON.parse(campaignDataStr);
-    const API_BASE_URL = 'http://127.0.0.1:8000'; // Keep this consistent
+    const API_BASE_URL = 'https://life-givers-backend.vercel.app'; // Keep this consistent
 
     // 2. Populate UI
     document.getElementById('prev-title').textContent = campaignData.campaign_title;

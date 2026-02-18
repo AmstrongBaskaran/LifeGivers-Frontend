@@ -1,7 +1,7 @@
 // Load approved fundraisers
 document.addEventListener('DOMContentLoaded', async () => {
     const track = document.getElementById('fundraisers-track');
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    const API_BASE_URL = 'https://life-givers-backend.vercel.app';
     try {
         // Fetch list of APPROVED fundraisers from the Backend
         const response = await fetch(`${API_BASE_URL}/fundraiser/status/approved`);

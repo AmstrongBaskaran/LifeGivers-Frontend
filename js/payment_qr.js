@@ -2,7 +2,7 @@
 // Change this URL based on your environment:
 // - Local Development: 'http://127.0.0.1:8000'
 // - Production: 'https://life-givers-backend.vercel.app'
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = 'https://life-givers-backend.vercel.app';
 
 document.addEventListener('DOMContentLoaded', async () => {
     // 1. Get URL Parameters

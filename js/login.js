@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login_container');
     const inputs = loginForm.querySelectorAll('input');
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    const API_BASE_URL = 'https://life-givers-backend.vercel.app';
 
     // Helper function to display error messages below the input field
     const showError = (inputId, message) => {

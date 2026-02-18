@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const storiesContainer = document.getElementById('dynamic-stories-container');
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    const API_BASE_URL = 'https://life-givers-backend.vercel.app';
 
     async function fetchStories() {
         try {

@@ -1,6 +1,6 @@
 // BLOCK 1: Wait for page to load, then initialize all variables and get HTML element references
 document.addEventListener('DOMContentLoaded', async () => {
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    const API_BASE_URL = 'https://life-givers-backend.vercel.app';
     let selectedAmount = null;
     let selectedMethod = null;
     const customAmountInput = document.getElementById('custom-amount');
