@@ -1,6 +1,6 @@
 /**
- * campaign.js
- * Logic for the multi-step fundraiser campaign form.
+campaign.js
+Logic for the multi-step fundraiser campaign form.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.onerror = (e) => reject(e);
                 return;
             }
-
+            
             // If it's an image, we use the compression logic
             reader.readAsDataURL(file);
             reader.onload = (event) => {

@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const phone = document.getElementById('phone').value.trim();
         const password = document.getElementById('password').value;
 
-        const role = document.getElementById('role').value;
+        // const role = document.getElementById('role').value;
 
         // Create User Data Object to send to Backend
         // Note: Role is not sent, so it defaults to "user" in backend
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fullname: fullname,
             phone_number: phone,
             password: password,
-            role: role
+            // role: role
         };
 
         const submitBtn = document.getElementById('signin_btn');
