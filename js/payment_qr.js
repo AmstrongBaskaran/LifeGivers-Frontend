@@ -1,6 +1,4 @@
-// Backend API Configuration
-// Change this URL based on your environment:
-// - Local Development: 'http://127.0.0.1:8000'
+
 // - Production: 'https://life-givers-backend.vercel.app'
 const API_BASE_URL = 'https://life-givers-backend.vercel.app';
 
@@ -48,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return false;
     }
 
-    // Try requested ID first, then fallback to ANY fundraiser so the user can see it work
+    // Try requested ID first, then  to ANY fundraiser so the user can see it work
     let found = await fetchFundraiser(fundraiserId);
     if (!found) {
         console.log("Specified fundraiser not found, fetching any approved fundraiser...");
